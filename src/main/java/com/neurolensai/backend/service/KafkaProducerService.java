@@ -19,7 +19,7 @@ public class KafkaProducerService {
     public void sendFrame(byte[] imageBytes){
         try{
             kafkaTemplate.send(topicName, imageBytes);
-            log.info("Sent to topic: {}", topicName);
+            log.info("Image bytes Sent to topic: {}", topicName);
         } catch (Exception e){
             log.error("error in sending image bytes", e);
         }
