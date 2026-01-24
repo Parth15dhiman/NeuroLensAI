@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: backend
+
+  kafka:
+    bootstrap-servers: <Service_URI>
+    properties:
+      security.protocol: SSL
+      ssl.protocol: TLSv1.3
+      ssl.endpoint.identification.algorithm: ""
+
+      ssl.keystore.location: ./src/main/resources/client.keystore.p12
+      ssl.keystore.password: <password>
+      ssl.truststore.location: ./src/main/resources/truststore.p12
+      ssl.truststore.password: <password>
+      ssl.key.password: <password>
+
+      ssl.keystore.type: PKCS12
+      ssl.truststore.type: PKCS12
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      acks: 1
+      retries: 3

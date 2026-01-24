@@ -31,3 +31,15 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignore application.yml containing secrets
+src/main/resources/application.yml
+src/main/resources/application.properties
+
+# Ignore Aiven/Kafka certificates
+src/main/resources/*.pem
+src/main/resources/*.jks
+src/main/resources/*.p12
+
+# Security: Ignore Aiven raw certificates and converted keystores
+/certs/
