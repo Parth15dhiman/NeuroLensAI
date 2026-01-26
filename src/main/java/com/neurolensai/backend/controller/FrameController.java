@@ -1,6 +1,6 @@
 package com.neurolensai.backend.controller;
 
-import com.neurolensai.backend.service.KafkaProducerService;
+import com.neurolensai.backend.kafka.KafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ import java.io.IOException;
 public class FrameController {
 
     @Autowired
-    private KafkaProducerService producerService ;
+    private KafkaProducer producerService ;
 
     // FrameController.java
     @CrossOrigin(origins = "*", allowedHeaders = "*")

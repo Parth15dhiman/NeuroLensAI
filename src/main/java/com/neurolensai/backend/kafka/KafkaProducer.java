@@ -1,4 +1,4 @@
-package com.neurolensai.backend.service;
+package com.neurolensai.backend.kafka;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class KafkaProducerService {
+public class KafkaProducer {
 
     @Value("${app.kafka.topic}")
     private String topicName ;
