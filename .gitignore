@@ -43,3 +43,20 @@ src/main/resources/*.p12
 
 # Security: Ignore Aiven raw certificates and converted keystores
 /certs/
+
+
+# ===== Python / AI =====
+__pycache__/
+*.pyc
+.env
+
+# Jupyter / Colab
+.ipynb_checkpoints/
+
+# Node / JS
+node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db

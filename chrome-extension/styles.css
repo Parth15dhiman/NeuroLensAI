@@ -1,0 +1,72 @@
+#neurolens-card {
+    position: fixed; top: 20px; right: 20px; width: 320px;
+    background: rgba(15, 15, 15, 0.85); backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); z-index: 2147483647;
+    font-family: 'Inter', sans-serif; color: white; overflow: hidden;
+}
+
+.nl-header {
+    cursor: move; padding: 12px 16px; background: rgba(255, 255, 255, 0.05);
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nl-logo-text {
+    font-weight: 700; font-size: 14px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.nl-close-btn { cursor: pointer; opacity: 0.6; transition: 0.2s; }
+.nl-close-btn:hover { opacity: 1; transform: scale(1.1); }
+.nl-body { padding: 20px; }
+.nl-label { font-size: 24px; font-weight: 800; margin: 5px 0; }
+
+#neurolens-launcher {
+    position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px;
+    background: radial-gradient(circle, #1a1a1a, #000);
+    border-radius: 50%; cursor: move; z-index: 2147483647;
+    display: none; align-items: center; justify-content: center;
+    border: 2px solid rgba(0, 242, 254, 0.5);
+    animation: breathingBlue 3s infinite;
+}
+
+.nl-launcher-ring {
+    position: absolute; width: 100%; height: 100%;
+    border: 2px dashed rgba(0, 242, 254, 0.4); border-radius: 50%;
+    animation: rotateRing 8s linear infinite;
+}
+
+.nl-launcher-text {
+    font-weight: 900; font-size: 22px;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes rotateRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+@keyframes breathingBlue {
+    0%, 100% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.3); border-color: rgba(0, 242, 254, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(0, 242, 254, 0.7); border-color: rgba(0, 242, 254, 0.8); }
+}
+
+@keyframes breathingGreen {
+    0%, 100% { box-shadow: 0 0 10px rgba(46, 213, 115, 0.3); }
+    50% { box-shadow: 0 0 25px rgba(46, 213, 115, 0.8); }
+}
+
+@keyframes breathingRed {
+    0%, 100% { box-shadow: 0 0 10px rgba(255, 71, 87, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(255, 71, 87, 0.9); }
+}
+
+/* Timeline & Pulse */
+.nl-timeline { display: flex; gap: 6px; margin-top: 15px; justify-content: center; }
+.nl-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.1); }
+.nl-pulse { width: 8px; height: 8px; background: #4facfe; border-radius: 50%; display: inline-block; margin-right: 8px; animation: pulse 1.5s infinite; }
+@keyframes pulse { 0% { transform: scale(0.9); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
+
+.nl-confidence-bar-bg { height: 6px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-top: 10px; }
+.nl-confidence-fill { height: 100%; border-radius: 10px; transition: width 0.5s ease; }
